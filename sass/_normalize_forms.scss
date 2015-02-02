@@ -1,11 +1,3 @@
-input::-webkit-input-placeholder,
-input::-moz-placeholder,
-input::-ms-input-placeholder,
-textarea::-moz-placeholder,
-textarea::-webkit-input-placeholder {
-	color: lighten($dark-grey, 20%);
-    opacity: 1;
-}
 
 
 input[type="button"], input[type="submit"], input[type="reset"], input[type="file"]::-webkit-file-upload-button, button	{
@@ -90,18 +82,3 @@ textarea	{
 	padding-top: 10px;
 }
 
-input	{
-	&[type='text'], &[type='tel'], &[type='email']	{
-	width: 100%;
-	background: $white;
-	height: $form-height;
-	line-height: $form-height;
-	margin-bottom: 10px;
-	}
-}
-
-textarea	{
-	width: 100%;
-	background: $grey;
-	height: 128px;
-}

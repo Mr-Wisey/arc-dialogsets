@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Forms by Arcmedia</title>
+        <meta name="description" content="XXX">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="css/dialogsets.css">
+		<link rel="shortcut icon" href="favicon.png">
+
+        <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+		<!--[if lt IE 9]>
+        <script src="js/vendor/selectivizr-min.js"></script>
+        <![endif]-->
+
+	</head>
+<body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+
+<div style="margin: 0 auto; width: 700px; padding: 50px 0;">
+
+
+
+<form action="demo_form.asp" autocomplete="on">
+  First name:<input type="text" name="fname"><br>
+  Last name: <input type="text" name="lname"><br>
+  E-mail: <input type="email" name="email" autocomplete="off"><br>
+  <input type="submit">
+</form>
+
+
+
+
+
+<form>
+	<input type="hidden" value="xxx" name="xxx">
+
+	<label class="ie8-label mandatory" for="ctrl_1">
+		<span class="invisible">Pflichtfeld</span> 
+		Text<span class="mandatory">*</span>
+	</label>
+  
+      
+  <input type="text" placeholder="Text" required value="" name="Text">
+
+          <label class="ie8-label mandatory" for="ctrl_2">
+              <span class="invisible">Pflichtfeld</span> Telefon<span class="mandatory">*</span>
+          </label>
+  
+      
+  <input type="tel" placeholder="Telefon" required="" value="" class="text" id="ctrl_2" name="Telefon">
+
+
+          <label class="ie8-label mandatory" for="ctrl_3">
+              <span class="invisible">Pflichtfeld</span> E-Mail<span class="mandatory">*</span>
+          </label>
+  
+      
+  <input type="email" placeholder="E-Mail" required="" value="" class="text" id="ctrl_3" name="E-Mail">
+
+          <label class="ie8-label col-5-span push-1-span mandatory" for="ctrl_4">
+              <span class="invisible">Pflichtfeld</span> Mitteilung<span class="mandatory">*</span>
+          </label>
+  
+      
+  <textarea placeholder="Mitteilung" required="" cols="40" rows="4" class="textarea" id="ctrl_4" name="Mitteilung"></textarea>
+
+
+
+Enter a date before 1980-01-01:
+<input type="date" name="bday" max="1979-12-31">
+
+Enter a date after 2000-01-01:
+<input type="date" name="bday" min="2000-01-02">
+
+Quantity (between 1 and 5):
+<input type="number" name="quantity" min="1" max="5">
+
+Select images: <input type="file" name="img" multiple>
+
+
+Country code: 
+<input type="text" name="country_code" pattern="[A-Za-z]{3}" title="Three letter country code">
+
+  
+      <button value="Senden" class="submit submit_container button button-100" id="ctrl_5" type="submit">Senden</button>
+  
+
+
+  </form>
+
+
+<form>
+    <input type="text" required value="" />
+    <input type="submit" value="Submit" />
+
+
+</form>
+
+
+
+
+
+
+
+
+
+<form>
+    <input type="text" id="foo" required />
+    <input type="text" id="bar" />
+    <input type="submit" value="Submit" />
+</form>
+<script>
+    document.querySelectorAll('input[type="text"]:invalid'); //Matches input#foo
+    document.querySelectorAll('input[type="text"]:valid');   //Matches input#bar
+</script>
+
+
+
+
+
+
+<form>
+    <fieldset>
+        <legend>Change Your Password</legend>
+        <ul>
+            <li>
+                <label for="password1">Password 1:</label>
+                <input type="password" required id="password1" />
+            </li>
+            <li>     
+                <label for="password2">Password 2:</label>
+                <input type="password" required id="password2" />
+            </li>
+        </ul>
+        <input type="submit" />
+    </fieldset>
+</form>
+
+
+
+
+<form>
+    <input type="text" required />
+    <input type="text" />
+    <input type="submit" />
+</form>
+
+
+
+
+<form>
+<select name="options" multiple>
+	<option>Heino</option>
+	<option>Michael Jackson</option>
+	<option>Tom Waits</option>
+	<option>Nina Hagen</option>
+	<option>Marianne Rosenberg</option>
+</select>
+</form>
+
+
+<form>
+	<select name="options2">
+		<option>Heino</option>
+		<option>Michael Jackson</option>
+		<option>Tom Waits</option>
+		<option>Nina Hagen</option>
+		<option>Marianne Rosenberg</option>
+	</select>
+</form>
+
+
+<form>
+
+	<div class="checkbox">
+	  <input type="checkbox" id="a" />
+	  <label for="a">checkbox</label>
+	</div>
+	
+
+	<div class="checkbox">
+	  <input type="checkbox" id="b" />
+	  <label for="b">checkbox</label>
+	</div>
+
+	<div class="checkbox">
+	  <input type="checkbox" id="c" />
+	  <label for="c">checkbox</label>
+	</div>
+
+
+
+
+  <ul class="radio"> 
+    <li>
+    	<input type="radio" name="crust" id="crust1" value="deep" />
+    	<label for="crust1">Deep dish</label>
+    </li> 
+    <li>
+		<input type="radio" name="crust" id="crust2" value="thick" />
+		<label for="crust2">Thick</label>
+    </li> 
+    <li>
+		<input type="radio" name="crust" id="crust3" value="hand" />
+		<label for="crust3">Hand thrown</label>
+    </li> 
+    <li>
+		<input type="radio" name="crust" id="crust4" value="thin" />
+		<label for="crust4">Thin</label>
+    </li> 
+  </ul> 
+
+
+</form>
+
+
+
+
+</div>
+
+		<script src="js/main.js"></script>
+
+</body>
+</html>
