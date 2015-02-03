@@ -1,27 +1,72 @@
+//FORM RESET
 
+/* =============================================
+   GENERELL
+   ============================================= */
 
-input[type="button"], input[type="submit"], input[type="reset"], input[type="file"]::-webkit-file-upload-button, button	{
-	margin: 0;
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: border-box;
 }
 
 
+/* =============================================
+   INPUTS
+   ============================================= */
+
+textarea,
+select,
+input[type="date"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="email"],
+input[type="month"],
+input[type="number"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="text"],
+input[type="time"],
+input[type="url"],
+input[type="week"]	{
+
+
+-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+box-sizing: border-box;
+-webkit-background-clip: padding;
+-moz-background-clip: padding;
+background-clip:padding-box;
+-webkit-appearance:none;
+outline:0;
+text-align: left;
+vertical-align: middle;
+}
 
 input	{
 	-webkit-box-sizing: border-box !important;
 	outline: none;
 	border: none;
 	font: inherit !important;
-	color: inherit !important;
 	letter-spacing: inherit !important;
 	word-spacing: inherit !important;
 	text-transform: inherit !important;
 	text-indent: inherit !important;
 	text-shadow: inherit !important;
-	display: inherit !important;
+/*	display: inherit !important; */
 	padding: 0px;
 	text-align: inherit !important;
 	cursor: auto;
 	-moz-use-text-color: inherit !important;
+	-webkit-text-fill-color: inherit !important;
+/*
+	border-bottom-left-radius: inherit !important;
+	border-bottom-right-radius: inherit !important;
+	border-top-left-radius: inherit !important;
+	border-top-right-radius: inherit !important;
+*/
 	&.error	{
 		background: red;
 	}
@@ -32,10 +77,58 @@ input[type="date"]	{
 	display: block;
 	font-family: inherit;
 	overflow: hidden;
-	padding: 0px;
 	-webkit-padding-start: 0px;
 	-webkit-user-select: date !important;
 }
+
+
+input[type="file"]::-webkit-file-upload-button,
+input[type="file"]	{
+	margin: 0;
+}
+
+
+input[type="checkbox"]	{
+}
+
+input[type="color"]	{
+}
+
+input[type="hidden"]	{
+}
+
+input[type="image"]	{
+}
+
+input[type="radio"]	{
+}
+
+input[type="range"]	{
+}
+
+input[type="reset"]	{
+
+}
+
+
+input[type="submit"]	{
+
+}
+
+button	{
+}
+
+
+select	{
+background:#fff url(data:image/png;base64,R0lGODlhDQAEAIAAAAAAAP8A/yH5BAEHAAEALAAAAAANAAQAAAILhA+hG5jMDpxvhgIAOw==);
+background-repeat: no-repeat;
+background-position: 97% center;
+padding:0 25px 0 8px;
+font-size: .875em
+}
+
+
+
 
 textarea	{
 	color: inherit !important;
@@ -45,40 +138,39 @@ textarea	{
 	-moz-use-text-color: inherit !important;
     margin: 0;
     padding: 0;
+    display: block;
 }
 
-input	{
--webkit-text-fill-color: inherit !important;
-border-bottom-left-radius: inherit !important;
-border-bottom-right-radius: inherit !important;
-border-top-left-radius: inherit !important;
-border-top-right-radius: inherit !important;
-}
+
 
 /* =============================================
-   INPUT ERROR 
+   BUTTONS
    ============================================= */
 
-.invalid 	{
-	input:required:invalid, textarea:required:invalid {
-	box-shadow: 0 0 1.5px 1px red;
-	}
+
+button::-moz-focus-inner,
+input[type="button"]::-moz-focus-inner,
+input[type="submit"]::-moz-focus-inner,
+input[type="file"] > input[type="button"]::-moz-focus-inner {
+	border:0;
+	padding:0;
+	margin:0;
 }
 
-::-webkit-validation-bubble {}
-::-webkit-validation-bubble-message {}
-::-webkit-validation-bubble-arrow {}
-::-webkit-validation-bubble-arrow-clipper {}
+input[type="button"],
+input[type="submit"],
+button	{
+	appearance: none;
+	-moz-appearance: none; /* Firefox */
+	-webkit-appearance: none; /* Safari and Chrome */
+	border: none;
+	padding: 0;
+}
+
+
+
 
 /* =============================================
-   CUSTOM
+   CHECKBOX
    ============================================= */
-
-input, textarea	{
-	padding: 0 10px 0;
-}
-
-textarea	{
-	padding-top: 10px;
-}
 

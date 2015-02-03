@@ -1,4 +1,111 @@
-$form-height: 30px;
+/* =============================================
+   COLORS
+   ============================================= */
 
-$white: #ffffff;
-$dark-grey: #efefef;
+/* GENERELL */
+$body-background: #ffffff;
+// background-color of the body
+
+$primary-color: #4eb7a8;
+$primary-color-dark: #46ab9d;
+
+$secondary-color: #e75735;
+$secondary-color-dark: #d64d2d;
+
+
+$error-color: #e75735;
+// color for error messages and styles
+
+
+/* FONT-COLORS */
+$font-color: #515151;
+$font-color-negativ: #FFFFFF;
+// basic font color, used for all fonts
+
+$lighten-placeholder-ammount: 20%;
+// true of false, wheter the placeholder text should be lightened
+
+
+/* INPUT-FIELD-COLORS */
+$field-background: #e5e5e7;
+// background-color of input fields and disabled elements
+
+$field-border: #515151;
+// color of input fields border
+
+
+
+/* =============================================
+   FONTS
+   ============================================= */
+
+/* FONT-FAMILY */
+$basic-font-family: Helvetica, sans-serif;
+
+
+/* FONT-SIZES */
+$basic-font-size: 16px;
+$input-font-size: 80%;
+
+
+
+
+
+
+/* =============================================
+   INPUT-STYLING
+   ============================================= */
+
+/* INPUT WIDTHS/HEIGHTS/PADDINGS */
+$form-height: auto;
+$form-width: 100%;
+$input-padding-top: 10px;
+$input-padding-right: 10px;
+$input-padding-bottom: 10px;
+$input-padding-left: 10px;
+
+$input-margin-bottom: 10px;
+
+
+/* INPUT BORDERS */
+$input-border-width: 1px;
+$input-border-radius: 3px;
+
+/* TEXTAREA STYLING */
+$textarea-height: auto;
+$textarea-width: $form-width;
+
+
+
+
+/* =============================================
+   TEXTAREA STYLING
+   ============================================= */
+
+$textarea-height: auto;
+
+
+
+/* =============================================
+   BUTTON-STYLING
+   ============================================= */
+
+$button-font-color: #FFFFFF;
+// basic font color for buttons
+
+
+$button-width: auto;
+$button-padding-top: 5px;
+$button-padding-right: 10px;
+$button-padding-bottom: 5px;
+$button-padding-left: 10px;
+
+$button-border-width: 2px;
+$button-border-radius: 5px;
+
+
+/* =============================================
+   MIXINS
+   ============================================= */
+
+$placeholder-color: lighten($font-color,$lighten-placeholder-ammount);

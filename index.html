@@ -3,7 +3,7 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<!--        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> -->
         <title>Forms by Arcmedia</title>
         <meta name="description" content="XXX">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -11,10 +11,22 @@
         <link rel="stylesheet" href="css/dialogsets.css">
 		<link rel="shortcut icon" href="favicon.png">
 
-        <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
 		<!--[if lt IE 9]>
-        <script src="js/vendor/selectivizr-min.js"></script>
+        <script src="js/selectivizr-min.js"></script>
         <![endif]-->
+
+<style>
+
+.wrapper	{
+	margin: 0 auto; 
+	max-width: 700px; 
+	padding: 50px 20px;
+	}
+	
+form	{
+	margin-bottom: 70px;
+}	
+</style>
 
 	</head>
 <body>
@@ -23,15 +35,18 @@
         <![endif]-->
 
 
-<div style="margin: 0 auto; width: 700px; padding: 50px 0;">
+<div class="wrapper">
 
 
 
 <form action="demo_form.asp" autocomplete="on">
-  First name:<input type="text" name="fname"><br>
-  Last name: <input type="text" name="lname"><br>
-  E-mail: <input type="email" name="email" autocomplete="off"><br>
-  <input type="submit">
+  First name:
+  <input type="text" required name="fname" placeholder="First Name" />
+  Last name:
+  <input type="text" name="lname" />
+  E-mail:
+  <input type="email" name="email" autocomplete="off" />
+  <button type="submit">Absenden</button>
 </form>
 
 
@@ -50,7 +65,7 @@
   <input type="text" placeholder="Text" required value="" name="Text">
 
           <label class="ie8-label mandatory" for="ctrl_2">
-              <span class="invisible">Pflichtfeld</span> Telefon<span class="mandatory">*</span>
+              <span class="invisible">Pflichtfeld Telefon</span><span class="mandatory">*</span>
           </label>
   
       
@@ -60,9 +75,15 @@
           <label class="ie8-label mandatory" for="ctrl_3">
               <span class="invisible">Pflichtfeld</span> E-Mail<span class="mandatory">*</span>
           </label>
-  
-      
-  <input type="email" placeholder="E-Mail" required="" value="" class="text" id="ctrl_3" name="E-Mail">
+	<input type="text" pattern="/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/" required /> 
+          <label class="ie8-label mandatory" for="ctrl_3">
+              <span class="invisible">Pflichtfeld</span> E-Mail<span class="mandatory">*</span>
+          </label>
+	<input type="email" pattern="[^@]+@[^@]+\.[a-zA-Z]{2,6}" required /> 
+          <label class="ie8-label mandatory" for="ctrl_3">
+              <span class="invisible">Pflichtfeld</span> E-Mail<span class="mandatory">*</span>
+          </label>
+	<input type="email" placeholder="E-Mail" value="" class="text" id="ctrl_3" name="E-Mail" required />
 
           <label class="ie8-label col-5-span push-1-span mandatory" for="ctrl_4">
               <span class="invisible">Pflichtfeld</span> Mitteilung<span class="mandatory">*</span>
@@ -71,6 +92,8 @@
       
   <textarea placeholder="Mitteilung" required="" cols="40" rows="4" class="textarea" id="ctrl_4" name="Mitteilung"></textarea>
 
+
+  
 
 
 Enter a date before 1980-01-01:
@@ -98,7 +121,7 @@ Country code:
 
 <form>
     <input type="text" required value="" />
-    <input type="submit" value="Submit" />
+    <button type="submit">Submit</button>
 
 
 </form>
@@ -114,7 +137,7 @@ Country code:
 <form>
     <input type="text" id="foo" required />
     <input type="text" id="bar" />
-    <input type="submit" value="Submit" />
+    <button type="submit">Submit</button>
 </form>
 <script>
     document.querySelectorAll('input[type="text"]:invalid'); //Matches input#foo
@@ -139,7 +162,7 @@ Country code:
                 <input type="password" required id="password2" />
             </li>
         </ul>
-        <input type="submit" />
+	    <button type="submit">Submit</button>
     </fieldset>
 </form>
 
@@ -149,7 +172,7 @@ Country code:
 <form>
     <input type="text" required />
     <input type="text" />
-    <input type="submit" />
+    <button type="submit">Submit</button>
 </form>
 
 
@@ -179,22 +202,17 @@ Country code:
 
 <form>
 
-	<div class="checkbox">
-	  <input type="checkbox" id="a" />
-	  <label for="a">checkbox</label>
-	</div>
-	
 
-	<div class="checkbox">
-	  <input type="checkbox" id="b" />
-	  <label for="b">checkbox</label>
-	</div>
 
-	<div class="checkbox">
-	  <input type="checkbox" id="c" />
-	  <label for="c">checkbox</label>
-	</div>
 
+
+<div class="checkbox">  
+    <input id="check1" type="checkbox" name="check" value="check1">  
+    <label for="check1">Checkbox No. 1</label>  
+    <br>  
+    <input id="check2" type="checkbox" name="check" value="check2">  
+    <label for="check2">Checkbox No. 2</label>  
+</div>  
 
 
 
@@ -218,14 +236,31 @@ Country code:
   </ul> 
 
 
+
 </form>
+
+
+
+<form name='f1' method="POST" action=""  >     
+  <div id="fp">
+
+
+	<!-- WORKS -->
+        <span style="margin-left:-50px">Email:</span>&nbsp;&nbsp;
+        <span><input  class="input" type="email" name="Email" placeholder="Enter mailID" required pattern="[^@]+@[^@]+\.[a-zA-Z]{2,6}" ></span><br>
+
+
+         <input type="submit"  name="submit" value="submit">
+
+   </div>
+  </form>  
 
 
 
 
 </div>
 
-		<script src="js/main.js"></script>
+		<script src="js/scripts.js"></script>
 
 </body>
 </html>

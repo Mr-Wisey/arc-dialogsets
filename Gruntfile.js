@@ -64,6 +64,12 @@ module.exports = function(grunt) {
         ],
         tasks: ['sass:dev']
       },
+      js: {
+        files: [
+          jsFileList
+        ],
+        tasks: ['concat']
+      },
       livereload: {
         // Browser live reloading
         // https://github.com/gruntjs/grunt-contrib-watch#live-reloading
@@ -83,10 +89,12 @@ module.exports = function(grunt) {
     'dev'
   ]);
   grunt.registerTask('dev', [
+    'jshint',
     'sass:dev',
     'concat'
   ]);
   grunt.registerTask('build', [
+    'jshint',
     'sass:build',
     'uglify',
   ]);

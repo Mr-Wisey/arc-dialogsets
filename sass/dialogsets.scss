@@ -2,74 +2,168 @@
 @import "_normalize_forms";
 @import "_settings";
 
-
-
-input::-webkit-input-placeholder,
-input::-moz-placeholder,
-input::-ms-input-placeholder,
-textarea::-moz-placeholder,
-textarea::-webkit-input-placeholder {
-	color: lighten($dark-grey, 20%);
-    opacity: 1;
-}
-
-
-input[type="button"], input[type="submit"], input[type="reset"], input[type="file"]::-webkit-file-upload-button, button	{
-	margin: 0;
+body	{
+	font-size: $basic-font-size;
+	background-color: $body-background;
+	color: $font-color;
+	font-family: $basic-font-family;
 }
 
 
 
-input	{
-	-webkit-box-sizing: border-box !important;
-	outline: none;
-	border: none;
-	font: inherit !important;
-	color: inherit !important;
-	letter-spacing: inherit !important;
-	word-spacing: inherit !important;
-	text-transform: inherit !important;
-	text-indent: inherit !important;
-	text-shadow: inherit !important;
-	display: inherit !important;
-	padding: 0px;
-	text-align: inherit !important;
-	cursor: auto;
-	-moz-use-text-color: inherit !important;
-    -webkit-text-fill-color: inherit !important;
-    border-bottom-left-radius: inherit !important;
-    border-bottom-right-radius: inherit !important;
-    border-top-left-radius: inherit !important;
-    border-top-right-radius: inherit !important;
 
-	&.error	{
-		background: red;
-	}
+/* =============================================
+   INPUT FIELDS / TEXTAREA
+   ============================================= */
+
+
+input[type="date"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="email"],
+input[type="month"],
+input[type="number"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="text"],
+input[type="time"],
+input[type="url"],
+input[type="week"],
+textarea	{
+	/* COLORS */
+	background: $field-background;
+	color: $font-color;
+
+	/* FONTS */
+	font-size: $input-font-size;
+	font: $basic-font-family;
+
+	/* STYLING */
+	height: $form-height;
+	width: $form-width;
+	padding: $input-padding-top $input-padding-right $input-padding-bottom $input-padding-left;
+	border-radius: $input-border-radius;
+	-moz-border-radius: $input-border-radius;
+	-webkit-border-radius: $input-border-radius;
+	-ms-border-radius: $input-border-radius;
+	-o-border-radius: $input-border-radius;
+	border-width: $input-border-width;
+	border-style: solid;
+	border-color: $primary-color;
+	margin-bottom: $input-margin-bottom;
+
 }
 
-input[type="date"]	{
-	align-items: center;
-	display: block;
-	font-family: inherit;
-	overflow: hidden;
-	padding: 0px;
-	-webkit-padding-start: 0px;
-	-webkit-user-select: date !important;
+/* PLACEHOLDER-COLOR */
+
+::-webkit-input-placeholder { /* WebKit browsers */
+	color: $placeholder-color;
 }
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+	color: $placeholder-color;
+   opacity:  1;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+	color: $placeholder-color;
+   opacity:  1;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+	color: $placeholder-color;
+}
+
+/* TEXTAREA */
 
 textarea	{
-	color: inherit !important;
-	font: inherit !important;
-	outline: none;
-	border: none;
-	-moz-use-text-color: inherit !important;
-    margin: 0;
-    padding: 0;
+	height: $textarea-height;
+	width: $textarea-width;
 }
+
+
+/* =============================================
+   BUTTONS
+   ============================================= */
+
+input[type="button"],
+input[type="submit"],
+button,
+	{
+	background-color: $primary-color;
+	color: $button-font-color;
+	border: none;
+	padding: $button-padding-top $button-padding-right $button-padding-bottom $button-padding-left;
+	width: $button-width;
+
+	border-radius: $button-border-radius;
+	-moz-border-radius: $button-border-radius;
+	-webkit-border-radius: $button-border-radius;
+	-ms-border-radius: $button-border-radius;
+	-o-border-radius: $button-border-radius;
+	border-width: $button-border-width;
+	border-style: solid;
+	border-color: $primary-color;
+
+}
+
+
+
+
+/* =============================================
+   CHECKBOX
+   ============================================= */
+
+input[type="checkbox"] {  
+    display: none;
+}
+
+.checkbox label:before {  
+	cursor: pointer;
+    border-radius: 3px;  
+    content: "";  
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, .2);  
+    font-size: 15px;  
+    color: $primary-color;  
+    text-align: center;  
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    display: inline-block;
+    background-color: $field-background;
+    margin-right: 10px;
+    margin-bottom: 5px;
+    position: relative;
+    top: -3px;
+    vertical-align: top;
+}  
+
+input[type="checkbox"]:checked + label:before {  
+    content: "\2713";  
+}  
+
+
+
+
 
 /* =============================================
    INPUT ERROR 
    ============================================= */
+
+:invalid {
+    box-shadow: none; /* FF */
+    outline: 0;       /* IE 10 */
+}
+
+/* WILL DISPLAY AFTER INTERACTION WITH FORM ELEMENT -> USES JAVASCRIPT */
+.interacted:invalid {
+	border: 1px solid red;
+}
+.interacted:valid {
+	border: 1px solid green;
+}
+
+
+
+
 
 .invalid 	{
 	input:required:invalid, textarea:required:invalid {
@@ -82,24 +176,3 @@ textarea	{
 ::-webkit-validation-bubble-arrow {}
 ::-webkit-validation-bubble-arrow-clipper {}
 
-/* =============================================
-   CUSTOM
-   ============================================= */
-
-input, textarea	{
-	padding: 0 10px 0;
-}
-
-textarea	{
-	padding-top: 10px;
-}
-
-input	{
-	&[type='text'], &[type='tel'], &[type='email']	{
-	width: 100%;
-	background: $white;
-	height: $form-height;
-	line-height: $form-height;
-	margin-bottom: 10px;
-	}
-}

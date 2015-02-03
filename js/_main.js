@@ -33,7 +33,7 @@ for (var i = 0; i < forms.length; i++) {
 
 /* FORM VALIDATION AFTER INTERACTION */
 
-var inputs = document.querySelectorAll('input[type=text]');
+var inputs = document.querySelectorAll('input[type=text], input[type=email], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], input[type="week"]');
 for (var i = 0; i < inputs.length; i++) {
     inputs[i].addEventListener('blur', function(event) {
         event.target.classList.add('interacted');
